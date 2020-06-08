@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+        <link href="styles/style.css" rel="stylesheet" type="text/css">
+        <title>NomNom Food</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="the-texter">
+                <div class="name">
+                    <h1>NomNom Food</h1>
+                </div>
+
+                <!-- Tab links, each one with an onclick event associated with it -->
+                <div class="btn">
+                  <button class="btn btn-one" onclick="openInfo(event, 'Client')">Client</button>
+                  <button class="btn btn-two" onclick="openInfo(event, 'Products')">Products</button>
+                  <button class="btn btn-three" onclick="openInfo(event, 'Cart')">Cart</button>
+                </div>
+
+                <!-- Tab content -->
+                <div id="Client" class="tabcontent">
+                  <h3>Client Information</h3>
+                  <p>Tell us a bit about you.</p>
+                    Choose a Category:
+                        <input type="checkbox" id="Vegetarian" name="Vegetarian" value="Vegetarian" onchange="populateListProductChoices(this.id, 'displayProduct')">
+                        <label for="Vegetarian">Vegetarian</label>
+                        <input type="checkbox" id="GlutenFree" name="GlutenFree" value="GlutenFree" onchange="populateListProductChoices(this.id, 'displayProduct')">
+                        <label for="GlutenFree">GlutenFree</label>
+                        <input type="checkbox" id="Organic" name="Organic" value="Organic" onchange="populateListProductChoices(this.id, 'displayProduct')">
+                        <label for="Organic">Organic</label>
+                        <input type="checkbox" id="None" name="None" value="None" onchange="populateListProductChoices(this.id, 'displayProduct')">
+                        <label for="None">None</label>
+                </div>
+            
+                <div id="Products" class="tabcontent">
+                  <h3>Your targeted products</h3>
+                  <p>We preselected products based on your restrictions.</p>
+                     Choose items to buy:
+                     <div id="displayProduct"></div>
+                     <button id="addCart" type="button" class="block" onclick="selectedItems()">
+                        Add selected items to cart.
+                    </button>
+                </div>
+
+                <div id="Cart" class="tabcontent">
+                  <h3>Cart</h3>
+                  <p>Here is your cart.</p>
+                  <div id="displayCart"></div>
+                </div>
+            </div>
+
+            <script src="scripts/groceries.js"></script>
+            <script src="scripts/main.js"></script>
+            
+            <h3>Site Web Concu par Gokhan Duzel</h3>
+
+        </header>
+    </body>
+</html>
